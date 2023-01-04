@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-content{
+            width: 300px;
+            height: 450px;
+            border: 2px solid red;
+            box-shadow: 0 0 15px black;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .main-content img{
+            width: inherit;
+            height: inherit;
+        }
+        .main-content img:hover{
+            transform: scale(1.5,1.5);
+        }
+        .door-left{
+            background-color:brown;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            transform-origin: left;
+            transform: perspective(400px) rotateY(0deg);
+            transition: all 0.8s;
+
+
+        }
+      .main-content:hover .door-left{
+        transform: perspective(400px) rotateY(90deg);
+      }
+       .door-right{
+            background-color:brown;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            transform-origin: right;
+            transform: perspective(400px) rotateY(0deg);
+            transition: all 0.8s;
+
+
+        }
+      .main-content:hover .door-right{
+        transform: perspective(400px) rotateY(-90deg);
+      }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg" alt="">
+        <div class="door-left"></div>
+        <div class="door-right"></div>
+    </div>
+</body>
+</html>
